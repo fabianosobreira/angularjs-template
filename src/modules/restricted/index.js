@@ -3,6 +3,6 @@ import restricted from "./restricted"
 
 const module = angular
   .module("restricted", [])
-  .component("restricted", restricted)
+  .component("restrictedView", restricted)
 
 export default module.name

@@ -2,20 +2,20 @@ export default [
   {
     name: "home",
     url: "/",
-    component: "home"
+    component: "homeView"
   },
 
   {
     name: "login",
     url: "/login",
-    component: "login",
+    component: "loginView",
     resolve: { returnTo: returnTo }
   },
 
   {
     name: "restricted",
     url: "/restricted",
-    component: "restricted",
+    component: "restrictedView",
     data: { requiresAuth: true }
   }
 ]
