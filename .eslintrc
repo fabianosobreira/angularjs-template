@@ -1,0 +1,17 @@
+{
+  "extends": ["eslint:recommended"],
+  "env": {
+    "amd": true,
+    "browser": true
+  },
+  "parser": "babel-eslint",
+  "globals": {
+    "PRODUCTION": true
+  },
+  "rules": {
+    "no-unused-vars": [
+      "error",
+      { "vars": "all", "args": "none", "ignoreRestSiblings": false }
+    ]
+  }
+}

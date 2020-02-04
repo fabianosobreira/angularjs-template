@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>AngularJS Template</title>
+</head>
+
+<body>
+  <div id="app" ng-app="app" ng-strict-di>
+    <ul>
+      <li><a ui-sref="home">Home</a></li>
+      <li><a ui-sref="login">Login</a></li>
+      <li><a ui-sref="restricted">Restricted</a></li>
+    </ul>
+    <ui-view></ui-view>
+  </div>
+</body>
+
+</html>
