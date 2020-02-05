@@ -1,14 +1,15 @@
 export default class AuthService {
-  constructor($q, $timeout) {
+  constructor($q, $timeout, userStoreService) {
     "ngInject"
     this.$q = $q
     this.$timeout = $timeout
+    this.userStoreService = userStoreService
   }
 
   login() {
     const { $q, $timeout } = this
     return $timeout(() => {
-      localStorage["isAuthenticated"] = JSON.stringify(true)
+      this.userStoreService.set({ username: "user" })
       return $q.resolve()
     }, 10)
   }
@@ -16,15 +17,12 @@ export default class AuthService {
   logout() {
     const { $q, $timeout } = this
     return $timeout(() => {
-      localStorage["isAuthenticated"] = JSON.stringify(false)
+      this.userStoreService.clear()
       return $q.resolve()
     }, 10)
   }
 
   isAuthenticated() {
-    return (
-      localStorage["isAuthenticated"] &&
-      JSON.parse(localStorage["isAuthenticated"])
-    )
+    return this.userStoreService.get() !== undefined
   }
 }
