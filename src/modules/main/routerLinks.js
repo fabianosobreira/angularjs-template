@@ -9,7 +9,7 @@ class RouterLinksController {
   $onInit() {
     const { $scope, authService } = this
     $scope.$watch(
-      authService.isAuthenticated,
+      () => authService.isAuthenticated,
       value => (this.isAuthenticated = value)
     )
   }
