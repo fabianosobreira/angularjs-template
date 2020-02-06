@@ -9,7 +9,7 @@ appModule.config(($compileProvider, $stateProvider, $urlServiceProvider) => {
   $compileProvider.cssClassDirectivesEnabled(!PRODUCTION)
 
   states.forEach(state => $stateProvider.state(state))
-  $urlServiceProvider.rules.otherwise({ state: "home" })
+  $urlServiceProvider.rules.otherwise({ state: "app.home" })
 })
 
 appModule.run(($uiRouter, $transitions) => {
@@ -34,6 +34,6 @@ const redirectToLogin = transition => {
   const authService = transition.injector().get("authService")
   const $state = transition.router.stateService
   if (!authService.isAuthenticated()) {
-    return $state.target("login", undefined, { location: false })
+    return $state.target("app.login", undefined, { location: false })
   }
 }

@@ -1,19 +1,25 @@
 export default [
   {
-    name: "home",
-    url: "/",
+    name: "app",
+    url: "",
+    redirectTo: "app.home"
+  },
+
+  {
+    name: "app.home",
+    url: "/home",
     component: "homeView"
   },
 
   {
-    name: "login",
+    name: "app.login",
     url: "/login",
     component: "loginView",
     resolve: { returnTo: returnTo }
   },
 
   {
-    name: "restricted",
+    name: "app.restricted",
     url: "/restricted",
     component: "restrictedView",
     data: { requiresAuth: true }

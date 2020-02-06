@@ -18,7 +18,7 @@ class LoginController {
 
   logout() {
     this.authService.logout().then(() => {
-      this.$state.go("home")
+      this.$state.go("app.home")
     })
   }
 }

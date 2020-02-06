@@ -8,7 +8,7 @@ export default class UserStoreService {
   get() {
     return localStorage[STORAGE_KEY]
       ? JSON.parse(localStorage[STORAGE_KEY])
-      : undefined
+      : null
   }
 
   set(user) {

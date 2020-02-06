@@ -23,6 +23,6 @@ export default class AuthService {
   }
 
   isAuthenticated() {
-    return this.userStoreService.get() !== undefined
+    return this.userStoreService.get() !== null
   }
 }
