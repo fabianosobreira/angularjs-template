@@ -15,12 +15,6 @@ class LoginController {
 
     this.authService.login().then(returnToOriginalState)
   }
-
-  logout() {
-    this.authService.logout().then(() => {
-      this.$state.go("app.home")
-    })
-  }
 }
 
 export default {

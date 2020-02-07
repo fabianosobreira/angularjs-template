@@ -1,17 +1,24 @@
 class RouterLinksController {
-  constructor($scope, authService) {
+  constructor($scope, $state, authService) {
     "ngInject"
     this.isAuthenticated = false
     this.$scope = $scope
+    this.$state = $state
     this.authService = authService
   }
 
   $onInit() {
     const { $scope, authService } = this
     $scope.$watch(
-      () => authService.isAuthenticated,
+      () => authService.isAuthenticated(),
       value => (this.isAuthenticated = value)
     )
+  }
+
+  logout() {
+    this.authService.logout().then(() => {
+      this.$state.go("app.home")
+    })
   }
 }
 
