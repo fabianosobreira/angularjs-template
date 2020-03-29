@@ -1,3 +1,12 @@
+import styles from "./login.css"
+
+const html = /*html*/ `
+  <h1 class="${styles.title}">login.html</h1>
+  <div>
+    <button ng-click="$ctrl.login()">Login</button>
+  </div>  
+`
+
 class LoginController {
   constructor($state, authService) {
     "ngInject"
@@ -18,7 +27,7 @@ class LoginController {
 }
 
 export default {
-  template: require("./login.html"),
+  template: html,
   controller: LoginController,
   bindings: {
     $transition$: "<",
