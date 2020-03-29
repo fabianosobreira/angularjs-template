@@ -1,8 +1,4 @@
-import styles from "./home.css"
-
-const html = /*html*/ `
-  <h1 class="${styles.title}">home.html</h1>
-`
+import html from "./home.tpl"
 
 class HomeController {
   constructor() {

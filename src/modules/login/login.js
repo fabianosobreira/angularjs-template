@@ -1,11 +1,4 @@
-import styles from "./login.css"
-
-const html = /*html*/ `
-  <h1 class="${styles.title}">login.html</h1>
-  <div>
-    <button ng-click="$ctrl.login()">Login</button>
-  </div>  
-`
+import html from "./login.tpl"
 
 class LoginController {
   constructor($state, authService) {
