@@ -1,3 +1,5 @@
+import template from "./restricted.tpl"
+
 class RestrictedController {
   constructor() {
     "ngInject"
@@ -5,9 +7,9 @@ class RestrictedController {
 }
 
 export default {
-  template: require("./restricted.html"),
+  template: template,
   controller: RestrictedController,
   bindings: {
-    $transition$: "<"
-  }
+    $transition$: "<",
+  },
 }
