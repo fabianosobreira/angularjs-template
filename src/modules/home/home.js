@@ -1,3 +1,5 @@
+import template from "./home.tpl"
+
 class HomeController {
   constructor() {
     "ngInject"
@@ -5,9 +7,9 @@ class HomeController {
 }
 
 export default {
-  template: require("./home.html"),
+  template: template,
   controller: HomeController,
   bindings: {
-    $transition$: "<"
-  }
+    $transition$: "<",
+  },
 }

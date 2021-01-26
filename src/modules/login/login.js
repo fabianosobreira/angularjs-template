@@ -1,3 +1,5 @@
+import template from "./login.tpl"
+
 class LoginController {
   constructor($state, authService) {
     "ngInject"
@@ -18,10 +20,10 @@ class LoginController {
 }
 
 export default {
-  template: require("./login.html"),
+  template: template,
   controller: LoginController,
   bindings: {
     $transition$: "<",
-    returnTo: "<"
-  }
+    returnTo: "<",
+  },
 }

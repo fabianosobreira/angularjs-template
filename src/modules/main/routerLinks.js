@@ -1,3 +1,20 @@
+const html = /*html*/ `
+  <ul>
+    <li>
+      <a ui-sref="app.home">Home</a>
+    </li>
+    <li>
+      <a ui-sref="app.login">Login</a>
+      <span ng-show="$ctrl.isAuthenticated">
+        (authenticated) <button ng-click="$ctrl.logout()">Logout</button>
+      </span>
+      <span ng-show="!$ctrl.isAuthenticated">(not authenticated)</span>
+    </li>
+    <li>
+      <a ui-sref="app.restricted">Restricted</a>
+    </li>
+  </ul>`
+
 class RouterLinksController {
   constructor($scope, $state, authService) {
     "ngInject"
@@ -11,7 +28,7 @@ class RouterLinksController {
     const { $scope, authService } = this
     $scope.$watch(
       () => authService.isAuthenticated(),
-      value => (this.isAuthenticated = value)
+      (value) => (this.isAuthenticated = value)
     )
   }
 
@@ -23,10 +40,10 @@ class RouterLinksController {
 }
 
 export default {
-  template: require("./routerLinks.html"),
+  template: html,
   controller: RouterLinksController,
   bindings: {
     $transition$: "<",
-    returnTo: "<"
-  }
+    returnTo: "<",
+  },
 }

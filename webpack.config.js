@@ -39,7 +39,16 @@ module.exports = env => {
             env.prod ? MiniCssExtractPlugin.loader : "style-loader",
             {
               loader: "css-loader",
-              options: { importLoaders: 1 }
+              options: {
+                importLoaders: 1,
+                sourceMap: env.prod ? false : true,
+                modules: {
+                  mode: "local",
+                  localIdentName: env.prod
+                    ? "[hash:base64]"
+                    : "[path][name]__[local]"
+                }
+              }
             },
             "sass-loader"
           ]
