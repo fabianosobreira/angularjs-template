@@ -1,1 +1,3 @@
-<h1>restricted.html</h1>
+export default /*html*/ `
+  <h1>restricted.html</h1>
+`

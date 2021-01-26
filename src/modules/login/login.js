@@ -1,4 +1,4 @@
-import html from "./login.tpl"
+import template from "./login.tpl"
 
 class LoginController {
   constructor($state, authService) {
@@ -20,10 +20,10 @@ class LoginController {
 }
 
 export default {
-  template: html,
+  template: template,
   controller: LoginController,
   bindings: {
     $transition$: "<",
-    returnTo: "<"
-  }
+    returnTo: "<",
+  },
 }

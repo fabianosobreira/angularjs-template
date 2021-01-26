@@ -2,28 +2,28 @@ export default [
   {
     name: "app",
     url: "",
-    redirectTo: "app.home"
+    redirectTo: "app.home",
   },
 
   {
     name: "app.home",
     url: "/home",
-    component: "homeView"
+    component: "homeView",
   },
 
   {
     name: "app.login",
     url: "/login",
     component: "loginView",
-    resolve: { returnTo: returnTo }
+    resolve: { returnTo: returnTo },
   },
 
   {
     name: "app.restricted",
     url: "/restricted",
     component: "restrictedView",
-    data: { requiresAuth: true }
-  }
+    data: { requiresAuth: true },
+  },
 ]
 
 function returnTo($transition$) {

@@ -1,4 +1,4 @@
-import html from "./home.tpl"
+import template from "./home.tpl"
 
 class HomeController {
   constructor() {
@@ -7,9 +7,9 @@ class HomeController {
 }
 
 export default {
-  template: html,
+  template: template,
   controller: HomeController,
   bindings: {
-    $transition$: "<"
-  }
+    $transition$: "<",
+  },
 }

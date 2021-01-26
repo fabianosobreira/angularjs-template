@@ -28,7 +28,7 @@ class RouterLinksController {
     const { $scope, authService } = this
     $scope.$watch(
       () => authService.isAuthenticated(),
-      value => (this.isAuthenticated = value)
+      (value) => (this.isAuthenticated = value)
     )
   }
 
@@ -44,6 +44,6 @@ export default {
   controller: RouterLinksController,
   bindings: {
     $transition$: "<",
-    returnTo: "<"
-  }
+    returnTo: "<",
+  },
 }
